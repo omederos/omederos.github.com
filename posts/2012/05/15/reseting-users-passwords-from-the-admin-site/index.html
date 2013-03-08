@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <title>Reseting user's passwords from the admin site</title>
+<link href="http://localhost:8000/theme/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="http://localhost:8000/" type="application/atom+xml" rel="alternate" title="Oscar Mederos ATOM Feed" />
+  
+  <!--[if IE]>
+  <style type="text/css"> 
+  .twoColFixRtHdr #mainContent { zoom: 1; }
+  </style>
+  <![endif]-->
+
+</head>
+
+<body>
+
+<div id="container">
+
+  <div id="header">
+  <h1><a href="http://localhost:8000/index.html">Oscar Mederos</h1>
+    
+  </div><!-- end #header -->
+  
+  <div id="topMenu">
+  
+    <ul>
+            	<li><a href="http://localhost:8000/index.html">Home</a></li>
+        <li>&ndash;</li>
+        <li><a href="http://localhost:8000/archives.html">Archives</a></li>
+                
+    </ul>
+  
+  </div><!-- end #topMenu -->
+
+  <div id="sidebar">
+    <ul>
+  		<li>
+	    <h3>Pages</h3>
+	    <ul>
+                            <li><a href="http://localhost:8000/pages/about/">About</a></li>
+            	    </ul>
+	</li>
+          		<li>
+            <h3>Categories</h3>
+            <ul>
+	        		     <li ><a href="http://localhost:8000/category/blogging">blogging</a></li>
+	        		     <li class="active"><a href="http://localhost:8000/category/django">django</a></li>
+	        	    </ul>
+	</li>
+                	        <li>
+                <h3>Social</h3>
+                <ul>
+                                                                            <li><a href="https://github.com/omederos">Github</a></li>
+                                    <li><a href="http://twitter.com/omederos">Twitter</a></li>
+                                    <li><a href="http://www.facebook.com/omederos">Facebook</a></li>
+                                    <li><a href="http://careers.stackoverflow.com/omederos">SO Careers 2.0</a></li>
+                                </ul>
+        </li><!-- /.social -->
+          	        <li>
+            <h3>Tags?</h3>
+            <ul>
+                            <li class="tag-4"><a href="/tag/pelican/">pelican</a></li>
+                            <li class="tag-4"><a href="/tag/django/">django</a></li>
+                            <li class="tag-4"><a href="/tag/blogging/">blogging</a></li>
+                            <li class="tag-1"><a href="/tag/python/">python</a></li>
+                        <!--                    <li><a href="http://localhost:8000/tag/python/">python</a></li>
+                                <li><a href="http://localhost:8000/tag/pelican/">pelican</a></li>
+                                <li><a href="http://localhost:8000/tag/blogging/">blogging</a></li>
+                                <li><a href="http://localhost:8000/tag/django/">django</a></li>
+             -->
+            </ul>
+        </li>
+            </ul>
+  </div><!-- end #sidebar -->
+
+  <div id="mainContent">
+  	
+     
+
+
+<div class="blogItem">
+    
+      <h2><a href="http://localhost:8000/posts/2012/05/15/reseting-users-passwords-from-the-admin-site/">Reseting user's passwords from the admin site</a></h2>
+      <h3>Tuesday, May 15, 2012</h3>
+      
+  <p>Days ago I was building a website using Django, and one of the requirements is that <em>admins</em> should be able to reset <strong>any</strong> user's password through the admin interface.</p>
+<p>You already can change any user's password, but what I wanted is different. I wanted to send an email to the user saying something like:</p>
+<blockquote>
+<p>You can reset the password of your username visiting the below link:</p>
+<p>http://www.example.com/password/reset/<token_here></p>
+</blockquote>
+<p>I was trying to find an app or snippet that already does that, but I couldn't find. After a few minutes, here is what I got:</p>
+<p><center><img alt="" src="/static/images/admin-screenshot.png" /></center></p>
+<p>Once admin clicks on the <code>Reset password</code> button, an email will be sent to that current user.</p>
+<p>Well, the steps you need to follow are pretty simple:</p>
+<p><br><strong>Create a custom <code>ModelAdmin</code>:</strong></p>
+<p>Create an <code>admin.py</code> file inside your app directory, and write the following:</p>
+<div class="codehilite"><pre><span class="n">from</span> <span class="n">django</span><span class="p">.</span><span class="n">contrib</span><span class="p">.</span><span class="n">auth</span><span class="p">.</span><span class="n">forms</span> <span class="n">import</span> <span class="n">PasswordResetForm</span>
+<span class="n">from</span> <span class="n">django</span><span class="p">.</span><span class="n">contrib</span><span class="p">.</span><span class="n">auth</span><span class="p">.</span><span class="n">admin</span> <span class="n">import</span> <span class="n">UserAdmin</span>
+
+    <span class="n">class</span> <span class="n">CustomUserAdmin</span><span class="p">(</span><span class="n">UserAdmin</span><span class="p">)</span><span class="o">:</span>
+        <span class="p">...</span>
+        <span class="n">def</span> <span class="n">reset_password</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">user_id</span><span class="p">)</span><span class="o">:</span>
+            <span class="k">if</span> <span class="n">not</span> <span class="n">self</span><span class="p">.</span><span class="n">has_change_permission</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="o">:</span>
+                <span class="n">raise</span> <span class="n">PermissionDenied</span>
+            <span class="n">user</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">model</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="n">user_id</span><span class="p">)</span>
+
+            <span class="n">form</span> <span class="o">=</span> <span class="n">PasswordResetForm</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="err">&#39;</span><span class="n">email</span><span class="err">&#39;</span><span class="o">:</span> <span class="n">user</span><span class="p">.</span><span class="n">email</span><span class="p">})</span>
+            <span class="n">form</span><span class="p">.</span><span class="n">is_valid</span><span class="p">()</span>
+
+            <span class="n">form</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="n">email_template_name</span><span class="o">=</span><span class="err">&#39;</span><span class="n">my_template</span><span class="p">.</span><span class="n">html</span><span class="err">&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="err">&#39;</span><span class="p">..</span><span class="err">&#39;</span><span class="p">)</span>
+
+        <span class="n">def</span> <span class="n">get_urls</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="o">:</span>
+            <span class="n">urls</span> <span class="o">=</span> <span class="n">super</span><span class="p">(</span><span class="n">UserAdmin</span><span class="p">,</span> <span class="n">self</span><span class="p">).</span><span class="n">get_urls</span><span class="p">()</span>
+
+            <span class="n">my_urls</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">(</span><span class="err">&#39;&#39;</span><span class="p">,</span>
+                <span class="p">(</span><span class="n">r</span><span class="err">&#39;</span><span class="o">^</span><span class="p">(</span><span class="err">\</span><span class="n">d</span><span class="o">+</span><span class="p">)</span><span class="o">/</span><span class="n">reset</span><span class="o">-</span><span class="n">password</span><span class="o">/</span><span class="err">$&#39;</span><span class="p">,</span>
+                         <span class="n">self</span><span class="p">.</span><span class="n">admin_site</span><span class="p">.</span><span class="n">admin_view</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">reset_password</span><span class="p">)</span>
+                <span class="p">),</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="n">my_urls</span> <span class="o">+</span> <span class="n">urls</span>
+</pre></div>
+
+
+<p><br><strong>Override the template to add the <code>Reset Password</code> link</strong></p>
+<p>Let's suppose your TEMPLATE_DIRS point to the directory <code>templates/</code>. Then you need to create a file
+named <code>change_form.html</code> inside <code>templates/admin/auth/user</code> with the following content:</p>
+<div class="codehilite"><pre><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;admin/change_form.html&quot;</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">load</span> <span class="nv">i18n</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">object-tools</span> <span class="cp">%}</span>
+    <span class="cp">{%</span> <span class="k">if</span> <span class="nv">change</span> <span class="cp">%}{%</span> <span class="k">if</span> <span class="k">not</span> <span class="nv">is_popup</span> <span class="cp">%}</span>
+        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;object-tools&quot;</span><span class="nt">&gt;</span>
+            <span class="c">{# You can also give a name to that pattern and refer to it below using &#39;url&#39; #}</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;reset-password/&quot;</span> <span class="na">class=</span><span class="s">&quot;historylink&quot;</span><span class="nt">&gt;</span>Reset password<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;history/&quot;</span> <span class="na">class=</span><span class="s">&quot;historylink&quot;</span><span class="nt">&gt;</span><span class="cp">{%</span> <span class="k">trans</span> <span class="s2">&quot;History&quot;</span> <span class="cp">%}</span><span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="cp">{%</span> <span class="k">if</span> <span class="nv">has_absolute_url</span> <span class="cp">%}</span>
+                <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;../../../r/</span><span class="cp">{{</span> <span class="nv">content_type_id</span> <span class="cp">}}</span><span class="s">/</span><span class="cp">{{</span> <span class="nv">object_id</span> <span class="cp">}}</span><span class="s">/&quot;</span> <span class="na">class=</span><span class="s">&quot;viewsitelink&quot;</span><span class="nt">&gt;</span>
+                    <span class="cp">{%</span> <span class="k">trans</span> <span class="s2">&quot;View on site&quot;</span> <span class="cp">%}</span><span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+            <span class="cp">{%</span> <span class="k">endif</span><span class="cp">%}</span>
+        <span class="nt">&lt;/ul&gt;</span>
+    <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+</pre></div>
+
+
+<p><br><strong>Register your ModelAdmin</strong></p>
+<div class="codehilite"><pre><span class="n">from</span> <span class="n">django</span><span class="p">.</span><span class="n">contrib</span><span class="p">.</span><span class="n">auth</span><span class="p">.</span><span class="n">models</span> <span class="n">import</span> <span class="n">User</span>
+
+<span class="n">admin</span><span class="p">.</span><span class="n">site</span><span class="p">.</span><span class="n">unregister</span><span class="p">(</span><span class="n">User</span><span class="p">)</span>
+<span class="n">admin</span><span class="p">.</span><span class="n">site</span><span class="p">.</span><span class="k">register</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">CustomUserAdmin</span><span class="p">)</span>
+</pre></div>
+
+
+<p>That's it. Then you can easily go to any user you want, and if you click on the <code>Reset Password</code> button, an email will be sent to him/her.</p>	
+        
+      <h3 class="blogMeta">By <a href="#">Oscar Mederos</a>, Category: <a href="http://localhost:8000/category/django">django</a></h3>
+	<h3 class="blogMeta">Tags: <span><a href="http://localhost:8000/tag/python/">python</a> / </span>
+<span><a href="http://localhost:8000/tag/django/">django</a> / </span>
+</h3>    
+    </div><!-- end #blogItem -->
+				
+				<!-- end #content -->
+  
+  </div><!-- end #mainContent -->
+
+<div class="clearfloat"></div>
+
+  <div id="footer">
+  
+    <p><a href="http://css4free.com/" title="free CSS web site designs">Free CSS Gallery</a></p>
+    <p>Proudly powered by <a href="http://getpelican.com">pelican</a>, which takes great advantages of <a href="http://python.org">python</a>.
+  </div><!-- end #footer -->
+
+</div><!-- end #container -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-30866002-1");
+    pageTracker._trackPageview();
+    } catch(err) {}</script>
+</body>
+</html>

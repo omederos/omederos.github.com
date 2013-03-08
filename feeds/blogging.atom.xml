@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Oscar Mederos</title><link href="http://localhost:8000/" rel="alternate"></link><link href="http://localhost:8000/feeds/blogging.atom.xml" rel="self"></link><id>http://localhost:8000/</id><updated>2012-03-03T00:00:00-05:00</updated><entry><title>Finally created my blog</title><link href="http://localhost:8000/posts/2012/03/03/finally-created-my-blog/" rel="alternate"></link><updated>2012-03-03T00:00:00-05:00</updated><author><name>Oscar Mederos</name></author><id>tag:localhost:8000,2012-03-03:posts/2012/03/03/finally-created-my-blog/</id><summary type="html">&lt;p&gt;I've been thinking &lt;strong&gt;a lot&lt;/strong&gt; about creating a blog, and here finally it is.&lt;/p&gt;
+&lt;h2&gt;Using Pelican&lt;/h2&gt;
+&lt;p&gt;I'm currently using &lt;a href="http://alexis.notmyidea.org/pelican/"&gt;pelican&lt;/a&gt;, which is a static website generator developed in Python. It is pretty simple:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://pelican.notmyidea.org/en/2.7.2/getting_started.html"&gt;Install it&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://pelican.notmyidea.org/en/2.7.2/settings.html"&gt;Configure&lt;/a&gt; a &lt;code&gt;settings.py&lt;/code&gt; file&lt;/li&gt;
+&lt;li&gt;Write your page/post using &lt;a href="http://daringfireball.net/projects/markdown/"&gt;markdown&lt;/a&gt; syntax&lt;/li&gt;
+&lt;li&gt;Execute a &lt;a href="http://pelican.notmyidea.org/en/2.7.2/getting_started.html#generate-your-blog"&gt;command&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;and will create the entire website for you. That's all! Then you can push to your &lt;a href="http://pages.github.com/"&gt;github page&lt;/a&gt; repository ;)&lt;/p&gt;
+&lt;p&gt;I'll be trying &lt;a href="https://github.com/hyde/hyde"&gt;hyde&lt;/a&gt; (another Python static website generator) to see the main differences between them.&lt;/p&gt;
+&lt;h2&gt;About static website generators&lt;/h2&gt;
+&lt;p&gt;Here are a few reasons why I prefer those static website generators instead of using a blogging platform like &lt;a href="http://www.wordpress.com/"&gt;Wordpress&lt;/a&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;I don't have a very good internet connection and I can write offline without problem.&lt;/li&gt;
+&lt;li&gt;I don't need any HTML editor to write my code. I'm used to markdown syntax because of &lt;a href="http://www.stackoverflow"&gt;Stack Overflow&lt;/a&gt;, so it is pretty easy to write.&lt;/li&gt;
+&lt;li&gt;Submitting my content is as easy as executing &lt;code&gt;git push&lt;/code&gt; inside my local repository.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Downside&lt;/h2&gt;
+&lt;p&gt;Everytime I make a change on my blog, almost all the HTML pages are modified.&lt;/p&gt;
+&lt;p&gt;GitHub allows &lt;a href="https://github.com/mojombo/jekyll"&gt;Jekyll&lt;/a&gt;, which is good because the HTML pages are generated on the server. I think I'll give it a try these days...&lt;/p&gt;</summary><category term="pelican"></category><category term="blogging"></category><category term="python"></category></entry></feed>
