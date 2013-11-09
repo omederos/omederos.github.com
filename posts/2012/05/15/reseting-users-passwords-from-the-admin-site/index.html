@@ -6,8 +6,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   
   <title>Reseting user's passwords from the admin site</title>
-<link href="http://omederos.github.com/theme/css/style.css" rel="stylesheet" type="text/css" media="screen" />
-<link href="http://omederos.github.com/" type="application/atom+xml" rel="alternate" title="Oscar Mederos ATOM Feed" />
+<link href="http://omederos.github.io/theme/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="http://omederos.github.io/" type="application/atom+xml" rel="alternate" title="Oscar Mederos ATOM Feed" />
   
   <!--[if IE]>
   <style type="text/css"> 
@@ -22,70 +22,72 @@
 <div id="container">
 
   <div id="header">
-  <h1><a href="http://omederos.github.com/index.html">Oscar Mederos</h1>
-    
+  <h1><a href="http://omederos.github.io/index.html">Oscar Mederos</h1>
+  
   </div><!-- end #header -->
   
   <div id="topMenu">
   
     <ul>
-            	<li><a href="http://omederos.github.com/index.html">Home</a></li>
+    	<li><a href="http://omederos.github.io/index.html">Home</a></li>
         <li>&ndash;</li>
-        <li><a href="http://omederos.github.com/archives.html">Archives</a></li>
-                
+        <li><a href="http://omederos.github.io/archives.html">Archives</a></li>
+        
     </ul>
   
   </div><!-- end #topMenu -->
 
   <div id="sidebar">
     <ul>
-  		<li>
+	<li>
 	    <h3>Pages</h3>
 	    <ul>
-                            <li><a href="http://omederos.github.com/pages/about/">About</a></li>
-            	    </ul>
+                <li><a href="http://omederos.github.io/pages/about/">About</a></li>
+	    </ul>
 	</li>
-          		<li>
+	<li>
             <h3>Categories</h3>
             <ul>
-	        		     <li ><a href="http://omederos.github.com/category/blogging">blogging</a></li>
-	        		     <li class="active"><a href="http://omederos.github.com/category/django">django</a></li>
-	        	    </ul>
+		     <li ><a href="http://omederos.github.io/category/blogging">blogging</a></li>
+		     <li class="active"><a href="http://omederos.github.io/category/django">django</a></li>
+	    </ul>
 	</li>
-                	        <li>
+        <li>
                 <h3>Social</h3>
                 <ul>
-                                                                            <li><a href="https://github.com/omederos">Github</a></li>
-                                    <li><a href="http://twitter.com/omederos">Twitter</a></li>
-                                    <li><a href="http://www.facebook.com/omederos">Facebook</a></li>
-                                    <li><a href="http://careers.stackoverflow.com/omederos">SO Careers 2.0</a></li>
-                                </ul>
+                    <li><a href="https://github.com/omederos">Github</a></li>
+                    <li><a href="http://www.linkedin.com/in/omederos">LinkedIn</a></li>
+                    <li><a href="http://twitter.com/omederos">Twitter</a></li>
+                    <li><a href="http://www.facebook.com/omederos">Facebook</a></li>
+                    <li><a href="http://stackoverflow.com/users/297114/oscar-mederos">Stack Overflow</a></li>
+                    <li><a href="http://careers.stackoverflow.com/omederos">SO Careers 2.0</a></li>
+                </ul>
         </li><!-- /.social -->
-          	        <li>
+        <li>
             <h3>Tags?</h3>
             <ul>
-                            <li class="tag-1"><a href="/tag/python/">python</a></li>
-                            <li class="tag-4"><a href="/tag/pelican/">pelican</a></li>
-                            <li class="tag-4"><a href="/tag/blogging/">blogging</a></li>
-                            <li class="tag-4"><a href="/tag/django/">django</a></li>
-                        <!--                    <li><a href="http://omederos.github.com/tag/python/">python</a></li>
-                                <li><a href="http://omederos.github.com/tag/pelican/">pelican</a></li>
-                                <li><a href="http://omederos.github.com/tag/blogging/">blogging</a></li>
-                                <li><a href="http://omederos.github.com/tag/django/">django</a></li>
-             -->
+                <li class="tag-4"><a href="/tag/django/">django</a></li>
+                <li class="tag-1"><a href="/tag/python/">python</a></li>
+                <li class="tag-4"><a href="/tag/blogging/">blogging</a></li>
+                <li class="tag-4"><a href="/tag/pelican/">pelican</a></li>
+            <!--                    <li><a href="http://omederos.github.io/tag/python/">python</a></li>
+                    <li><a href="http://omederos.github.io/tag/pelican/">pelican</a></li>
+                    <li><a href="http://omederos.github.io/tag/blogging/">blogging</a></li>
+                    <li><a href="http://omederos.github.io/tag/django/">django</a></li>
+ -->
             </ul>
         </li>
-            </ul>
+    </ul>
   </div><!-- end #sidebar -->
 
   <div id="mainContent">
   	
-     
+ 
 
 
 <div class="blogItem">
     
-      <h2><a href="http://omederos.github.com/posts/2012/05/15/reseting-users-passwords-from-the-admin-site/">Reseting user's passwords from the admin site</a></h2>
+      <h2><a href="http://omederos.github.io/posts/2012/05/15/reseting-users-passwords-from-the-admin-site/">Reseting user's passwords from the admin site</a></h2>
       <h3>Tuesday, May 15, 2012</h3>
       
   <p>Days ago I was building a website using Django, and one of the requirements is that <em>admins</em> should be able to reset <strong>any</strong> user's password through the admin interface.</p>
@@ -95,12 +97,12 @@
 <p>http://www.example.com/password/reset/<token_here></p>
 </blockquote>
 <p>I was trying to find an app or snippet that already does that, but I couldn't find. After a few minutes, here is what I got:</p>
-<p><center><img alt="" src="/static/images/admin-screenshot.png" /></center></p>
+<p><center><img alt="admin site screenshot" src="/images/admin-screenshot.png" /></center></p>
 <p>Once admin clicks on the <code>Reset password</code> button, an email will be sent to that current user.</p>
 <p>Well, the steps you need to follow are pretty simple:</p>
 <p><br><strong>Create a custom <code>ModelAdmin</code>:</strong></p>
 <p>Create an <code>admin.py</code> file inside your app directory, and write the following:</p>
-<div class="codehilite"><pre><span class="n">from</span> <span class="n">django</span><span class="p">.</span><span class="n">contrib</span><span class="p">.</span><span class="n">auth</span><span class="p">.</span><span class="n">forms</span> <span class="n">import</span> <span class="n">PasswordResetForm</span>
+<div class="highlight"><pre><span class="n">from</span> <span class="n">django</span><span class="p">.</span><span class="n">contrib</span><span class="p">.</span><span class="n">auth</span><span class="p">.</span><span class="n">forms</span> <span class="n">import</span> <span class="n">PasswordResetForm</span>
 <span class="n">from</span> <span class="n">django</span><span class="p">.</span><span class="n">contrib</span><span class="p">.</span><span class="n">auth</span><span class="p">.</span><span class="n">admin</span> <span class="n">import</span> <span class="n">UserAdmin</span>
 
     <span class="n">class</span> <span class="n">CustomUserAdmin</span><span class="p">(</span><span class="n">UserAdmin</span><span class="p">)</span><span class="o">:</span>
@@ -131,7 +133,7 @@
 <p><br><strong>Override the template to add the <code>Reset Password</code> link</strong></p>
 <p>Let's suppose your TEMPLATE_DIRS point to the directory <code>templates/</code>. Then you need to create a file
 named <code>change_form.html</code> inside <code>templates/admin/auth/user</code> with the following content:</p>
-<div class="codehilite"><pre><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;admin/change_form.html&quot;</span> <span class="cp">%}</span>
+<div class="highlight"><pre><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;admin/change_form.html&quot;</span> <span class="cp">%}</span>
 <span class="cp">{%</span> <span class="k">load</span> <span class="nv">i18n</span> <span class="cp">%}</span>
 <span class="cp">{%</span> <span class="k">block</span> <span class="nv">object-tools</span> <span class="cp">%}</span>
     <span class="cp">{%</span> <span class="k">if</span> <span class="nv">change</span> <span class="cp">%}{%</span> <span class="k">if</span> <span class="k">not</span> <span class="nv">is_popup</span> <span class="cp">%}</span>
@@ -152,7 +154,7 @@ named <code>change_form.html</code> inside <code>templates/admin/auth/user</code
 
 
 <p><br><strong>Register your ModelAdmin</strong></p>
-<div class="codehilite"><pre><span class="n">from</span> <span class="n">django</span><span class="p">.</span><span class="n">contrib</span><span class="p">.</span><span class="n">auth</span><span class="p">.</span><span class="n">models</span> <span class="n">import</span> <span class="n">User</span>
+<div class="highlight"><pre><span class="n">from</span> <span class="n">django</span><span class="p">.</span><span class="n">contrib</span><span class="p">.</span><span class="n">auth</span><span class="p">.</span><span class="n">models</span> <span class="n">import</span> <span class="n">User</span>
 
 <span class="n">admin</span><span class="p">.</span><span class="n">site</span><span class="p">.</span><span class="n">unregister</span><span class="p">(</span><span class="n">User</span><span class="p">)</span>
 <span class="n">admin</span><span class="p">.</span><span class="n">site</span><span class="p">.</span><span class="k">register</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">CustomUserAdmin</span><span class="p">)</span>
@@ -160,10 +162,10 @@ named <code>change_form.html</code> inside <code>templates/admin/auth/user</code
 
 
 <p>That's it. Then you can easily go to any user you want, and if you click on the <code>Reset Password</code> button, an email will be sent to him/her.</p>	
-        
-      <h3 class="blogMeta">By <a href="#">Oscar Mederos</a>, Category: <a href="http://omederos.github.com/category/django">django</a></h3>
-	<h3 class="blogMeta">Tags: <span><a href="http://omederos.github.com/tag/python/">python</a> / </span>
-<span><a href="http://omederos.github.com/tag/django/">django</a> / </span>
+      
+      <h3 class="blogMeta">By <a href="#">Oscar Mederos</a>, Category: <a href="http://omederos.github.io/category/django">django</a></h3>
+<h3 class="blogMeta">Tags: <span><a href="http://omederos.github.io/tag/python/">python</a> / </span>
+<span><a href="http://omederos.github.io/tag/django/">django</a> / </span>
 </h3>    
     </div><!-- end #blogItem -->
 				
