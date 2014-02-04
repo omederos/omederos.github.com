@@ -57,7 +57,7 @@ ol {
 	/*background: url(../images/spill.gif) no-repeat top right;*/
 	margin: 0 auto;
 	text-align: left;
-	width: 780px;
+	width: Auto;
 } 
 
 #header { 
@@ -67,7 +67,6 @@ ol {
 } 
 
 #topMenu {
-	background: url(../images/menubar.gif) no-repeat;
 	height: 48px;
 }
 
@@ -79,13 +78,11 @@ ol {
 }
 
 #mainContent {
-	background: url(../images/body.gif) repeat-y;
 	padding: 20px 250px 10px 40px;
     min-height: 595px;
 } 
 
 #footer { 
-	background: url(../images/bottom.gif) no-repeat;
 	font-size: 14px;
 	height: 70px;
 	padding: 0 10px 0 20px;
@@ -96,7 +93,8 @@ ol {
 #header h1 {
 	font-size: 48px;
 	font-weight: normal;
-	padding: 20px 0 0 170px;
+	padding: 20px;
+    text-align: center;
 }
 
 #header h2 {
@@ -138,6 +136,10 @@ ol {
 	font-weight: normal;
 }
 
+.blogItem h2 a {
+    background: url("../images/hr.gif") repeat-x scroll left bottom rgba(0, 0, 0, 0)
+}
+
 .blogItem h2 a:hover,
 .blogItem h3 a:hover {
 	background: none;
@@ -149,9 +151,9 @@ ol {
 }
 
 .blogItem h3 {
-	background: url(../images/hr.gif) bottom left no-repeat;
+	/*background: url(../images/hr.gif) bottom left no-repeat;*/
 	font-size: 18px;
-	padding-bottom: 6px;
+	padding: 10px 0;
 }
 
 .blogItem h3.blogMeta {
@@ -227,4 +229,8 @@ ol {
 }
 .tag-4 a {
     font-size: 12px;
+}
+
+#separator {
+    background: url("../images/hr.gif") repeat-x scroll bottom rgba(0, 0, 0, 0);
 }

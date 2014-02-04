@@ -2,12 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Reseting user's passwords from the admin site</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="http://blog.omederos.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Oscar Mederos Full Atom Feed" />
+        
+        <link href="http://blog.omederos.com/theme/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+        
+    <meta content="Article" property="og:type">
+    <meta content="Reseting user's passwords from the admin site" property="og:title">
+    <meta content="http://blog.omederos.com/posts/2012/05/15/reseting-users-passwords-from-the-admin-site/" property="og:url">
   
-  <title>Reseting user's passwords from the admin site</title>
-<link href="http://blog.omederos.com/theme/css/style.css" rel="stylesheet" type="text/css" media="screen" />
-<link href="http://blog.omederos.com/" type="application/atom+xml" rel="alternate" title="Oscar Mederos ATOM Feed" />
   
   <!--[if IE]>
   <style type="text/css"> 
@@ -50,6 +54,7 @@
             <ul>
 		     <li ><a href="http://blog.omederos.com/category/blogging">blogging</a></li>
 		     <li class="active"><a href="http://blog.omederos.com/category/django">django</a></li>
+		     <li ><a href="http://blog.omederos.com/category/hacks">hacks</a></li>
 	    </ul>
 	</li>
         <li>
@@ -66,14 +71,20 @@
         <li>
             <h3>Tags?</h3>
             <ul>
-                <li class="tag-4"><a href="/tag/blogging/">blogging</a></li>
+                <li class="tag-4"><a href="/tag/jailbreak/">jailbreak</a></li>
                 <li class="tag-4"><a href="/tag/django/">django</a></li>
+                <li class="tag-4"><a href="/tag/iOS/">iOS</a></li>
+                <li class="tag-4"><a href="/tag/blogging/">blogging</a></li>
                 <li class="tag-1"><a href="/tag/python/">python</a></li>
                 <li class="tag-4"><a href="/tag/pelican/">pelican</a></li>
-            <!--                    <li><a href="http://blog.omederos.com/tag/python/">python</a></li>
-                    <li><a href="http://blog.omederos.com/tag/pelican/">pelican</a></li>
-                    <li><a href="http://blog.omederos.com/tag/blogging/">blogging</a></li>
+                <li class="tag-4"><a href="/tag/hacks/">hacks</a></li>
+            <!--                    <li><a href="http://blog.omederos.com/tag/pelican/">pelican</a></li>
+                    <li><a href="http://blog.omederos.com/tag/python/">python</a></li>
+                    <li><a href="http://blog.omederos.com/tag/jailbreak/">jailbreak</a></li>
+                    <li><a href="http://blog.omederos.com/tag/ios/">iOS</a></li>
+                    <li><a href="http://blog.omederos.com/tag/hacks/">hacks</a></li>
                     <li><a href="http://blog.omederos.com/tag/django/">django</a></li>
+                    <li><a href="http://blog.omederos.com/tag/blogging/">blogging</a></li>
  -->
             </ul>
         </li>
@@ -162,12 +173,26 @@ named <code>change_form.html</code> inside <code>templates/admin/auth/user</code
 
 
 <p>That's it. Then you can easily go to any user you want, and if you click on the <code>Reset Password</code> button, an email will be sent to him/her.</p>	
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="omederos">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
       
       <h3 class="blogMeta">By <a href="#">Oscar Mederos</a>, Category: <a href="http://blog.omederos.com/category/django">django</a></h3>
 <h3 class="blogMeta">Tags: <span><a href="http://blog.omederos.com/tag/python/">python</a> / </span>
 <span><a href="http://blog.omederos.com/tag/django/">django</a> / </span>
 </h3>    
     </div><!-- end #blogItem -->
+<div class="blogItem">
+    
+      <h2>Comments</h2>
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+       var disqus_identifier = "posts/2012/05/15/reseting-users-passwords-from-the-admin-site/";
+       (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://omederos.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  </div>
 				
 				<!-- end #content -->
   
@@ -176,8 +201,6 @@ named <code>change_form.html</code> inside <code>templates/admin/auth/user</code
 <div class="clearfloat"></div>
 
   <div id="footer">
-  
-    <p><a href="http://css4free.com/" title="free CSS web site designs">Free CSS Gallery</a></p>
     <p>Proudly powered by <a href="http://getpelican.com">pelican</a>, which takes great advantages of <a href="http://python.org">python</a>.
   </div><!-- end #footer -->
 
