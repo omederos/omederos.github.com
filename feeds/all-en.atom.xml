@@ -40,7 +40,7 @@
 &lt;p&gt;and tell evasi0n that it must download the &lt;code&gt;.ipa&lt;/code&gt; file from your computer instead of getting it from Apple servers.&lt;/p&gt;
 &lt;p&gt;To do that (using Windows), follow these steps:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Install an HTTP server in your computer. You can install &lt;a href="http://ww.wampserver.com/en‎"&gt;WAMP&lt;/a&gt;, &lt;a href="http://www.apachefriends.org‎"&gt;XAMP&lt;/a&gt;, etc.&lt;/li&gt;
+&lt;li&gt;Install an HTTP server in your computer. You can install &lt;a href="http://www.wampserver.com/en/"&gt;WAMP&lt;/a&gt;, &lt;a href="http://www.apachefriends.org/"&gt;XAMP&lt;/a&gt;, etc.&lt;/li&gt;
 &lt;li&gt;Once installed, create a file named &lt;code&gt;apple-ipa-info.plist&lt;/code&gt; in &lt;code&gt;C:\wamp\www\&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Modify your hosts file (&lt;code&gt;C:\Windows\System32\drivers\etc\hosts&lt;/code&gt;) and add the following line:&lt;/p&gt;
