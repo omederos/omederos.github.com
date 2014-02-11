@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://blog.omederos.com/index.html</loc>
-<lastmod>2014-02-04T19:06:44-00:00</lastmod>
+<lastmod>2014-02-11T17:32:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://blog.omederos.com/archives.html</loc>
-<lastmod>2014-02-04T19:06:44-00:00</lastmod>
+<lastmod>2014-02-11T17:32:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://blog.omederos.com/tags.html</loc>
-<lastmod>2014-02-04T19:06:44-00:00</lastmod>
+<lastmod>2014-02-11T17:32:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://blog.omederos.com/categories.html</loc>
-<lastmod>2014-02-04T19:06:44-00:00</lastmod>
+<lastmod>2014-02-11T17:32:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -35,6 +35,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <loc>http://blog.omederos.com/pages/about/</loc>
 <lastmod>2012-03-03T15:16:00-00:00</lastmod>
 <changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://blog.omederos.com/posts/2014/02/11/how-to-install-afc2add-and-other-packages-without-wifi-connection/</loc>
+<lastmod>2014-02-11T00:00:00-00:00</lastmod>
+<changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -75,7 +82,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://blog.omederos.com/category/hacks</loc>
-<lastmod>2014-02-04T00:00:00-00:00</lastmod>
+<lastmod>2014-02-11T00:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -96,21 +103,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://blog.omederos.com/tag/jailbreak/</loc>
-<lastmod>2014-02-04T00:00:00-00:00</lastmod>
+<lastmod>2014-02-11T00:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://blog.omederos.com/tag/ios/</loc>
-<lastmod>2014-02-04T00:00:00-00:00</lastmod>
+<lastmod>2014-02-11T00:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://blog.omederos.com/tag/hacks/</loc>
-<lastmod>2014-02-04T00:00:00-00:00</lastmod>
+<lastmod>2014-02-11T00:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
