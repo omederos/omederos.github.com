@@ -100,7 +100,7 @@ Sponsor: ModMyi.com &lt;a href="http://modmyi.com"&gt;http://modmyi.com&lt;/a&gt
 &lt;p&gt;By doing that, when you computer needs to access &lt;code&gt;evasi0n.com&lt;/code&gt;, it will ask &lt;code&gt;127.0.0.1&lt;/code&gt; instead.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Place the downloaded &lt;code&gt;.ipa&lt;/code&gt; file in &lt;code&gt;C:\wamp\www&lt;/code&gt; and name it however you want (e.g. &lt;code&gt;WWDC.ipa&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;Place the downloaded &lt;code&gt;.ipa&lt;/code&gt; file in &lt;code&gt;C:\wamp\www&lt;/code&gt; and name it however you want (e.g. &lt;code&gt;WWDC.ipa&lt;/code&gt;). If you are not able to follow the above steps to do it, just download it directly &lt;a href="http://www71.zippyshare.com/v/23156149/file.html"&gt;from here&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;Modify the &lt;code&gt;apple-ipa-info.plist&lt;/code&gt; file and replace the Apple URL by &lt;code&gt;http://localhost/WWDC.ipa&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
