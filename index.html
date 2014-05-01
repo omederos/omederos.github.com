@@ -51,6 +51,7 @@
 		     <li ><a href="http://blog.omederos.com/category/blogging">blogging</a></li>
 		     <li ><a href="http://blog.omederos.com/category/django">django</a></li>
 		     <li ><a href="http://blog.omederos.com/category/hacks">hacks</a></li>
+		     <li ><a href="http://blog.omederos.com/category/listar">listar</a></li>
 	    </ul>
 	</li>
         <li>
@@ -67,13 +68,14 @@
         <li>
             <h3>Tags?</h3>
             <ul>
+                <li class="tag-1"><a href="/tag/python/">python</a></li>
                 <li class="tag-4"><a href="/tag/blogging/">blogging</a></li>
                 <li class="tag-1"><a href="/tag/hacks/">hacks</a></li>
-                <li class="tag-4"><a href="/tag/pelican/">pelican</a></li>
-                <li class="tag-4"><a href="/tag/django/">django</a></li>
-                <li class="tag-1"><a href="/tag/python/">python</a></li>
+                <li class="tag-4"><a href="/tag/listar/">listar</a></li>
                 <li class="tag-1"><a href="/tag/jailbreak/">jailbreak</a></li>
+                <li class="tag-4"><a href="/tag/pelican/">pelican</a></li>
                 <li class="tag-1"><a href="/tag/ios/">ios</a></li>
+                <li class="tag-4"><a href="/tag/django/">django</a></li>
             <!--                    <li><a href="http://blog.omederos.com/tag/pelican/">pelican</a></li>
                     <li><a href="http://blog.omederos.com/tag/python/">python</a></li>
                     <li><a href="http://blog.omederos.com/tag/jailbreak/">jailbreak</a></li>
@@ -81,6 +83,7 @@
                     <li><a href="http://blog.omederos.com/tag/hacks/">hacks</a></li>
                     <li><a href="http://blog.omederos.com/tag/django/">django</a></li>
                     <li><a href="http://blog.omederos.com/tag/blogging/">blogging</a></li>
+                    <li><a href="http://blog.omederos.com/tag/listar/">listar</a></li>
  -->
             </ul>
         </li>
@@ -94,72 +97,41 @@
   	
     <div class="blogItem">
     
-      <h2><a href="http://blog.omederos.com/posts/2014/02/11/how-to-install-afc2add-and-other-packages-without-wifi-connection/">How to install afc2add and other packages without WiFi connection</a></h2>
-      <h3>Tuesday, February 11, 2014</h3>
+      <h2><a href="http://blog.omederos.com/posts/2014/05/01/testing-listarcom-embeded-pictures/">Testing Listar.com embeded pictures ;)</a></h2>
+      <h3>Thursday, May 01, 2014</h3>
       
-      <p><a href="http://blog.omederos.com/posts/2014/02/04/how-to-jailbreak-ios-7x-completely-offline/">In my last post</a> I explained how to jailbreak your iDevice with iOS 7.x completely offline, but as I said, once you finish the jailbreak process and connect the iPhone to your computer, it won't appear as jailbroken. I mean, you won't be able to see the entire filesystem.. As you might know, you'll need to install <code>afc2add</code>, but you can't do it locally yet (via the Cydia Autoinstall folder or SSH) because you can't access your phone as I explained before. </p>
-<p>The solution is to create a Cydia repository locally with the required packages, add that repository to Cydia in your iPhone and install what you need from there, instead of obtaining the packages from internet. You have two options:</p>
-<ol>
-<li>Place the repository in your local Web server, and connect your iPhone to an Ad-Hoc WiFi, AP, and enter the URL of your local computer.</li>
-<li>Place the repository inside your iPhone, which is faster and does not require connecting to any WiFi at all.</li>
-</ol>
-<p>Below is how you can do it using the 2nd alternative. I'll assume that you only want to install <code>afc2add</code> and <code>Erica Utilities</code>, which is a dependency of <code>afc2add</code>:</p>
-<ol>
-<li>
-<p>Create a text file named <code>Packages</code>. The content of this file should be something like this:</p>
-<blockquote>
-<p>Package: us.scw.afctwoadd<br />
-Name: afc2add<br />
-Version: 1.01<br />
-Architecture: iphoneos-arm<br />
-Description: Package to add afc2 service for USB browsing of filesystem. Adds the afc2 service and reboots the phone, to fix issues for folks unable to use USB browsers (like iPhoneBrowser) with blackra1n.<br />
-Depiction: http://some-url.com<br />
-Author: NetMage  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#99;&#119;&#64;&#115;&#99;&#119;&#46;&#117;&#115;">&#115;&#99;&#119;&#64;&#115;&#99;&#119;&#46;&#117;&#115;</a><br />
-Section: System<br />
-<strong>Size: 1136</strong><br />
-<strong>MD5sum: 624641d8ce8ee0c4035faf1997bf5df6</strong><br />
-<strong>Filename: afc2add.deb</strong></p>
-<p>Package: com.ericasadun.utilities <br />
-Name: Erica Utilities <br />
-Version: 1:0.4.2<br />
-Architecture: iphoneos-arm<br />
-Description: A collection of command-line utilities for various purposes.<br />
-Depiction: http://some-url.com<br />
-Homepage: http://modmyi.com/info/ericautilities.php  <br />
-Maintainer: Erica Sadun &lt;apptapp@ericasadun.com<br />
-Author: Erica Sadun &lt;apptapp@ericasadun.com<br />
-Section: Utilities<br />
-Sponsor: ModMyi.com <a href="http://modmyi.com">http://modmyi.com</a><br />
-<strong>Size: 55410</strong><br />
-<strong>MD5sum: 89a3bb9791c2deee6f530773089ee43d</strong>  <br />
-<strong>Filename: erica.deb</strong>  </p>
-</blockquote>
-<p>You're basically saying that your repository will contain two packages. Be careful with <code>Size</code>, <code>MD5sum</code> and <code>Filename</code> fields. The size must match the exact size of the file in bytes (<code>du -b file.deb</code> in Linux, or just click on Properties and see the <code>Size</code> field in Windows). The <code>MD5sum</code> field must be the <a href="http://en.wikipedia.org/wiki/Md5sum">md5 checksum</a> of the file. Finally, the <code>Filename</code> field must match the filename of the <code>.deb</code> files you'll be including in your repository.</p>
-</li>
-<li>
-<p>Compress the file. Cydia allows multiple formats, but I usually use <code>.bz2</code>. Just run <code>bzip2 -k Packages</code> on Linux. For Windows, you can use <a href="http://www.7-zip.org/">7-Zip</a> or use <a href="http://gnuwin32.sourceforge.net/packages/bzip2.htm">bzip2 for Windows</a>. You should have a file <code>Packages.bz2</code> now.</p>
-</li>
-<li>Open <code>iTools</code> or <code>iFunBox</code> and navigate to the <code>Downloads</code> folder (or any other folder you see there, like <code>Books</code> or <code>Purchases</code>).</li>
-<li>Copy the <code>Packages.bz2</code> and all the included <code>.deb</code> files (<code>afc2add.deb</code> and <code>erica.deb</code> in this case).</li>
-<li>Open Cydia in your phone and go <em>Manage &gt; Sources</em>.</li>
-<li>Add a new source and enter the following URL: <code>file:///var/mobile/Media/Downloads/</code>. Replace <code>Downloads</code> by the folder where you copied the files.</li>
-<li>After you add the repository, a new source will appear in the list. Click on it, and you will see the two packages you included.</li>
-<li>First install <code>Erica Utilities</code> and then <code>afc2add</code>. </li>
-<li>Reboot your phone if it doesn't reboot automatically after installing <code>afc2add</code>.</li>
-</ol>
-<p>That's it. You didn't require any internet connection (except for downlading the <code>.deb</code> files) and you now have complete access to your iPhone ;)</p>	
+      <p>Here goes the first picture:</p>
+<iframe src="http://www.listar.com/photos/1102/embed" width="502" height="894" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+
+<p>And here is the 2nd one:</p>
+<iframe src="http://www.listar.com/photos/1019/embed" width="502" height="589" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+
+<p>Will it work? :/</p>	
 
       
-      <h3 class="blogMeta">By <a href="#">Oscar Mederos</a>, Category: <a href="http://blog.omederos.com/category/hacks">hacks</a></h3>
-<h3 class="blogMeta">Tags: <span><a href="http://blog.omederos.com/tag/ios/">ios</a> / </span>
-<span><a href="http://blog.omederos.com/tag/jailbreak/">jailbreak</a> / </span>
-<span><a href="http://blog.omederos.com/tag/hacks/">hacks</a> / </span>
+      <h3 class="blogMeta">By <a href="#">Oscar Mederos</a>, Category: <a href="http://blog.omederos.com/category/listar">listar</a></h3>
+<h3 class="blogMeta">Tags: <span><a href="http://blog.omederos.com/tag/listar/">listar</a> / </span>
 </h3>    
     </div><!-- end #blogItem -->
 	
         <div class="blogItem">
                 <h1 id="separator">Other articles</h1>
         </div>
+        
+    
+    <div class="blogItem">
+    
+      <h2><a href="http://blog.omederos.com/posts/2014/02/11/how-to-install-afc2add-and-other-packages-without-wifi-connection/">How to install afc2add and other packages without WiFi connection</a></h2>
+      <h3>Tuesday, February 11, 2014</h3>
+      
+      <p>After jailbreaking your iDevice with version 7.x, you won't see it as jailbroken in your computer until you install afc2add. Here is how you can do it 100% offline!</p>	
+<h3 class="blogMeta">By <a href="#">Oscar Mederos</a>, Category: <a href="http://blog.omederos.com/category/hacks">hacks</a></h3>
+	<a href="http://blog.omederos.com/posts/2014/02/11/how-to-install-afc2add-and-other-packages-without-wifi-connection/">Continue reading …</a>
+      
+      
+	
+    
+    </div><!-- end #blogItem -->
         
     
     <div class="blogItem">
